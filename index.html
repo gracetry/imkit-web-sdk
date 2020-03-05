@@ -45,21 +45,21 @@
     if (chatActionsPosition) {
       config.chat.actionsPosition = chatActionsPosition;
     }
-    if (token) {
-      config.token = decodeURIComponent(token);
-      localStorage.setItem("IMKit-token", decodeURIComponent(token));
-    } else if (localStorage.getItem("IMKit-token")) {
-      config.token = localStorage.getItem("IMKit-token");
-    }
+    // if (token) {
+    //   config.token = decodeURIComponent(token);
+    //   localStorage.setItem("IMKit-token", decodeURIComponent(token));
+    // } else if (localStorage.getItem("IMKit-token")) {
+    //   config.token = localStorage.getItem("IMKit-token");
+    // }
 
     // 沒有設定 client，導到登入
     if (!config.token) {
       if (document.location.href.indexOf("?")) {
         let queryString = document.location.href.split("?");
         queryString.shift();
-        document.location.href = "demo?" + queryString.join("?");
+        // document.location.href = "demo?" + queryString.join("?");
       } else {
-        document.location.href = "demo";
+        // document.location.href = "demo";
       }
     }
 

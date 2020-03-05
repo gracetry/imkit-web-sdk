@@ -26,17 +26,19 @@ var config = {
   // 是否開啟 debug
   debug: false,
   // chat server 位置
-  domain: 'https://dev.fangho.com',
+  // domain: 'https://dev.fangho.com',
+  domain: 'http://chat-server.fitbutler.tw/',
   // auth server 位置，與 authClientId 配合取得 token，若填 token，此值可不填
-  authBase: 'https://dev.fangho.com/auth',
+  authBase: 'http://52.68.113.124:3110',
   // 登入的 chat user id，與 authBase 配合取得 token，若填 token，此值可不填
   authClientId: '',
   // 取得 url 預覽內容的 api 網址
   urlPreviewApi: 'https://url.imkit.io/',
   // chat server clientkey
-  clientKey: 'fangho_imkit_0412_2018_001_clientkey',
+  clientKey: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhcGlLZXkiOiIySllwWWhEYVFsSVFsRFN2VkxDTExvMk1QekZmVm05allweHcydnVCcm1rPSIsImNyZWF0ZUF0IjoxNTc2NTExOTI2NzA1LCJjbGllbnRJZCI6ImIzYzliZjI4LTExOTUtNDJkYS05ZTM4LTZlOTYzN2JlZTc5OCJ9.PnsKJwSBs_riODQEBNyQ5O7DchoHXHmp37K7WQADdO0',
+  apiKey: '2JYpYhDaQlIQlDSvVLCLLo2MPzFfVm9jYpxw2vuBrmk=',
   // chat user token，選填，若不填則需填 authBase 與 authClientId
-  token: '',
+  token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJGaXRidXRsZXIiLCJpYXQiOjE1ODMzMjM1NjMsImhvc3QiOiJodHRwczovL2FwcHdvcmtvdXQuYXBwLyIsImFjY291bnRfdHlwZSI6InN0YWZmIiwidG9rZW4iOiI3ZFlhWlA4OGR3NlB2RUxEVW92ZVY3QXlDdEhBWjdUVHpHWk53V0FKIn0.qaJ2MnI0c92j7LFzl_FuD_xiwEBFPNbHH9iYOlBscl4',
   // 訊息解密金鑰
   privateKey: '',
   // S3 bucketName
@@ -501,7 +503,7 @@ var config = {
       // 登出事件
       event: function() {
         localStorage.removeItem('IMKit-token');
-        document.location.href = 'demo';
+        // document.location.href = 'demo';
       }
     },
     // 是否有置頂功能
@@ -576,7 +578,7 @@ var config = {
     // call api 失敗時的處理
     onAjaxError: function(error) {
       if (error.RC === 401) {
-        window.location.href = '../demo';
+        // window.location.href = '../demo';
       } else {
         console.error(error.RM);
       }
